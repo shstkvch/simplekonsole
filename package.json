@@ -1,0 +1,12 @@
+{
+  "name": "simplekonsole",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "howler": "^2.2.1"
+  },
+  "scripts": {
+    "build": "browserify src/konsole.js -o dist/konsole.dist.js"
+  }
+}

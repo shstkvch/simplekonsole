@@ -1,0 +1,4 @@
+name: simplekonsole
+recipe: lamp
+config:
+  webroot: .
