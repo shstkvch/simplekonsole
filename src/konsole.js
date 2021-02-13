@@ -21,7 +21,7 @@ class Konsole {
 		this.mode = 'scroll';
 		this.buffer = [];
 		this.max_per_line = 52;
-		this.max_lines = 25;
+		this.max_lines = 30;
 	}
 
 
@@ -98,7 +98,7 @@ class Konsole {
 			return;
 		}
 
-		var lines = this.chunkString( text, this.max_per_line );
+		var lines = this.chunkString( text+'', this.max_per_line );
 		var that = this;
 
 		lines.map( function( line ) {
@@ -138,11 +138,15 @@ class Konsole {
 		console.log( 'Loading this code:', code );
 		console.log( 'Output from vm:', this.interpreter.value );
 
+		this.interpreter.appendCode( 'main()' );
+
 		this.step();
 	}
 
 	step() {
 		var out = this.interpreter.step();
+
+		console.log( 'STEP!' );
 
 		var that = this;
 		if ( out )  {
